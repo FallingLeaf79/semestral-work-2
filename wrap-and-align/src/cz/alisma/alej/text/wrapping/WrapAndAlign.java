@@ -35,19 +35,23 @@ public class WrapAndAlign {
         ParagraphDetector pd = new ParagraphDetector(input);
 
         Aligner aligner;
-        switch(args[0]) {
-            case "--right":
-                aligner = new RightAligner();
-                break;
-            case "--center":
-            case "--centre":
-                aligner = new CenterAligner();
-                break;
-            case "--justify":
-                aligner = new JustifyAligner();
-                break;
-            default:
-                aligner = new LeftAligner();
+        if (args.length > 0) {
+            switch(args[0]) {
+                case "--right":
+                    aligner = new RightAligner();
+                    break;
+                case "--center":
+                case "--centre":
+                    aligner = new CenterAligner();
+                    break;
+                case "--justify":
+                    aligner = new JustifyAligner();
+                    break;
+                default:
+                    aligner = new LeftAligner();
+            }
+        } else {
+            aligner = new LeftAligner();
         }
 
         while (pd.hasNextParagraph()) {
