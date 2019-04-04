@@ -1,6 +1,7 @@
 /*
  * MIT License
- * Copyright (c) 2019 Gymnazium Nad Aleji
+ * Copyright (c) 2017-2019 Gymnazium Nad Aleji
+ * Copyright (c) 2017 Vojtech Horky
  * Copyright (c) 2019 Ivo Korinek
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
