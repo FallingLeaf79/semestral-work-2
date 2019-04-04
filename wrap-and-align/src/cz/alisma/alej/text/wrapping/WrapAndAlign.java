@@ -33,7 +33,22 @@ public class WrapAndAlign {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         ParagraphDetector pd = new ParagraphDetector(input);
-        Aligner aligner = new LeftAligner();
+
+        Aligner aligner;
+        switch(args[0]) {
+            case "--right":
+                aligner = new RightAligner();
+                break;
+            case "--center":
+            case "--centre":
+                aligner = new CenterAligner();
+                break;
+            case "--justify":
+                aligner = new JustifyAligner();
+                break;
+            default:
+                aligner = new LeftAligner();
+        }
 
         while (pd.hasNextParagraph()) {
             Paragraph para = pd.nextParagraph();
