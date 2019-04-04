@@ -33,8 +33,13 @@ public class RightAligner implements Aligner {
     public String format(List<String> words, int lineWidth) {
         StringBuilder result = new StringBuilder();
 
+        boolean first = true;
         for (String w : words) {
-            result.append(" ");
+            if (first) {
+                first = false;
+            } else {
+                result.append(" ");
+            }
             result.append(w);
         }
 
