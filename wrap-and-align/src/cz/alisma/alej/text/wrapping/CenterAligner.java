@@ -27,7 +27,7 @@ package cz.alisma.alej.text.wrapping;
 
 import java.util.List;
 
-/** Left-aligns a line. */
+/** Center-aligns a line. */
 public class CenterAligner implements Aligner {
 
     @Override
