@@ -40,24 +40,24 @@ public class JustifyAligner implements Aligner {
           wordsLength += w.length();
         }
 
-        String result = "";
+        StringBuilder result = new StringBuilder();
         int uniformSpaces = (lineWidth - wordsLength) / spaceCount;
         int remainderSpaces = (lineWidth - wordsLength) % spaceCount;
 
         for (String w : words) {
-            result.concat(w);
+            result.append(w);
             if (spaceCount > 0) {
                 for (int i = uniformSpaces; i > 0; i--) {
-                    result.concat(" ");
+                    result.append(" ");
                 }
                 if (remainderSpaces > 0) {
-                    result.concat(" ");
+                    result.append(" ");
                     remainderSpaces--;
                 }
                 spaceCount--;
             }
         }
-        return result;
+        return result.toString();
     }
 
 }
