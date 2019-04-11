@@ -61,4 +61,3 @@ public class JustifyAligner implements Aligner {
     }
 
 }
-//How   do   words   even  work?      wordsLength 23 spaceCount 4 lineWidth 30 (7/4 = 1 7%4 = 3
