@@ -54,9 +54,18 @@ public class WrapAndAlign {
             aligner = new LeftAligner();
         }
 
+        int lineWidth = MAX_WIDTH;
+        if (args.length > 1) {
+            for (int i = 0; i < (args.length - 1); i++) {
+                if (args[i].equals("-w")) {
+                    lineWidth = Integer.parseInt(args[i + 1]);
+                }
+            }
+        }
+
         while (pd.hasNextParagraph()) {
             Paragraph para = pd.nextParagraph();
-            LinePrinter line = new LinePrinter(System.out, MAX_WIDTH, aligner);
+            LinePrinter line = new LinePrinter(System.out, lineWidth, aligner);
             while (para.hasNextWord()) {
                 String word = para.nextWord();
                 line.addWord(word);
