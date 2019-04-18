@@ -1,7 +1,7 @@
 /*
  * MIT License
  * Copyright (c) 2019 Gymnazium Nad Aleji
- * Copyright (c) 2019 Ivo oOrinek
+ * Copyright (c) 2019 Ivo Korinek
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -33,15 +33,13 @@ import static org.junit.Assert.*;
 
 public class AlignerTest {
 
-
+    @Before
     String testString = "One fish two fish red fish blue fish";
-    Aligner leftAligner = new LeftAligner();
-    Aligner rightAligner = new RightAligner();
-    Aligner centerAligner = new CenterAligner();
-    Aligner justifyAligner = new JustifyAligner();
+    Aligner aligner;
 
     @Test
     public void leftTest() {
+        aligner = new LeftAligner();
         assertEquals(
             "One fish two fish red fish blue fish",
             leftAligner.format(Arrays.asList(testString.split(" ")), 40)
@@ -50,6 +48,7 @@ public class AlignerTest {
 
     @Test
     public void rightTest() {
+        aligner = new RightAligner();
         assertEquals(
             "    One fish two fish red fish blue fish",
             rightAligner.format(Arrays.asList(testString.split(" ")), 40)
@@ -58,6 +57,7 @@ public class AlignerTest {
 
     @Test
     public void centerTest() {
+        aligner = new CenterAligner();
         assertEquals(
             "  One fish two fish red fish blue fish",
             centerAligner.format(Arrays.asList(testString.split(" ")), 40)
@@ -66,6 +66,7 @@ public class AlignerTest {
 
     @Test
     public void justifyTest() {
+        aligner = new JustifyAligner();
         assertEquals(
             "One  fish  two  fish  red fish blue fish",
             justifyAligner.format(Arrays.asList(testString.split(" ")), 40)
