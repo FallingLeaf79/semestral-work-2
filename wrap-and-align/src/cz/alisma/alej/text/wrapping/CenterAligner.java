@@ -41,7 +41,6 @@ public class CenterAligner implements Aligner {
                 leadingSpaces += " ";
             }
             result.insert(0, leadingSpaces);
-            result.append(leadingSpaces);
         }
 
         return result.toString();
